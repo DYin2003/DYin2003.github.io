@@ -213,7 +213,14 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
+# Collections
+collections:
+  experience:
+    output: true
+    permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
 # Sass/SCSS
 sass:
   sass_dir: _sass
@@ -307,6 +314,13 @@ compress_html:
 
 # Defaults
 defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
   # _posts
   - scope:
       path: ""
@@ -318,14 +332,17 @@ defaults:
       comments: # true
       share: true
       related: true
-  # _posts
+  # _experience
   - scope:
       path: ""
-      type: posts
+      type: experience
     values:
       layout: single
       author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
