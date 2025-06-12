@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "David Yin"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/headshot.jpg" 
   bio              : "UIUC<br>B.S. in Computer Engineering"
   #location         : "Somewhere"
   email            :
@@ -130,7 +130,7 @@ author:
       url:  "https://github.com/DYin2003"
     - label: "Resume"
       icon: "fas fa-fw fa-paperclip"
-      url: #
+      url: "/assets/files/Yin_David_Resume.pdf"
 
 # Site Footer
 footer:
