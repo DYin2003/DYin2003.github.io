@@ -1,0 +1,143 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+a {
+  color: #50585f;
+  text-decoration: none;
+  &:hover {
+    color: #383e44;
+  }
+}
+
+#timeline {
+  position: relative;
+  width: auto;
+  display: block;
+  height: 100%;
+  margin: {
+    left: 2rem;
+    top: 2rem;
+  }
+  @media only screen and (max-width: $large){
+    margin: {
+      left: 0rem;
+      top: 2rem;
+    }
+  }
+  div {
+    &:after {
+      content: '';
+      width: 2px;
+      position: absolute;
+      top: .5rem;
+      bottom: 0rem;
+      left: 3.9rem;
+      z-index: 1;
+      background: #C5C5C5;
+    }
+  }
+  h3 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    color: $gray;
+    margin: 0;
+    font: {
+      size: 1em;
+      weight: 400;
+    }
+    @media (min-width: 62em) {
+      font-size: 1.1em;
+    }
+  }
+  section.year {
+  position: relative;
+  &:first-child section{
+    margin-top: -2.7em;
+    padding-bottom: 0px;
+    @media only screen and (max-width: 280px){
+      margin-top: -1.3em;
+    }
+  }
+  section {
+    position: relative;
+    padding-bottom: 0;
+    margin-top: -2.7rem;
+    @media only screen and (max-width: 280px){
+      margin-top: -1.3em;
+    }
+    margin-bottom: 2.2em;
+    h4 {
+      position: absolute;
+      top: 0;
+      font: {
+        size: 1em;
+        weight: 400;
+      }
+      line-height: 1.4rem;
+      margin: 0;
+      padding: 0 0 0 5rem;
+      // color: #888;
+      @media (min-width: 62em) {
+        font-size: 1.1em;
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 3.0rem 0 0 4.5rem;
+      margin: -1.35rem 0 1em;
+      max-width: 32rem;
+      font-size: 1em;
+      @media (min-width: 62em) {
+        font-size: 1.1em;
+        padding: 3.0em 0 0 4.5em;
+      }
+      @media only screen and (max-width: 449px){
+        padding: 5.0em 0 0 4.5em;
+      }
+      @media only screen and (max-width: 280px){
+        padding: 6.5em 0 0 4.5em;
+      }
+      @media only screen and (max-width: 205px){
+        padding: 8.0em 0 0 4.5em;
+      }
+      &:last-child {
+        margin: {
+          bottom: 0;
+        }
+      }
+      &:first-of-type:after {
+        content: '';
+        width: .5rem;
+        height: .5rem;
+        background: #C5C5C5;
+        border: .2rem solid #FFFFFF;
+        @include border-radius(50%);
+        position: absolute;
+        left: 3.5rem;
+        top: .25rem;
+        z-index: 2;
+      }
+      li {
+        margin-left: .5rem;
+        &:before {
+          content: '·';
+          margin-left: -.5rem;
+          padding-right: .3rem;
+        }
+        &:not(:first-child) {
+          margin-top: .5rem;
+        }
+        span.price {
+          color: mediumturquoise;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+}
