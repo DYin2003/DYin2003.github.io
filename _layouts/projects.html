@@ -22,25 +22,13 @@ layout: archive
       {%- unless post.hidden -%}
         <li>
             <div class="black">{{post.title}}</div>
-            <div class="smaller-font">{{post.authors | replace: "Jianwei Sun", "<b>Jianwei Sun</b>"}}</div>
-            <i class="lightgray smaller-font">{{post.venue}}</i><br>
-            {% if post.notice %}
-              <div class="red smaller-font">{{post.notice}}</div>
-            {% endif %}
+            <ul>
+              {%- for detail in post.details -%}
+                <li class="smaller-font">{{ detail }}</li>
+              {%- endfor -%}
+            </ul>
             {% if post.link %}
-              <button type="button" onclick="window.open('{{ post.link }}','_blank')" class="btn btn--inverse">IEEE Xplore</button>
-            {% endif %}
-            {% if post.pdf %}
-              <button type="button" onclick="window.open('{{ post.pdf }}','_blank')" class="btn btn--inverse">PDF</button>
-            {% endif %}
-            {% if post.citation %}
-              <button type="button" onclick="copyToClipboard(this, '{{ post.citation | escape }}')" class="btn btn--inverse cpy_btn">Copy Citation</button>
-            {% endif %}
-            {% if post.video %}
-              <button type="button" onclick="window.open('{{ post.video }}','_blank')" class="btn btn--inverse">Video</button>
-            {% endif %}
-            {% if post.presentation %}
-              <button type="button" onclick="window.open('{{ post.presentation }}','_blank')" class="btn btn--inverse">Presentation</button>
+              <button type="button" onclick="window.open('{{ post.link }}','_blank')" class="btn btn--inverse">Github</button>
             {% endif %}
         </li>
       {%- endunless -%}
